@@ -1,0 +1,4 @@
+numbers = [1,2,3,4,5,6,7,8,9,10]
+even_numbers = filter(lambda n:n%2==0,numbers) #отфильтровывает только четные числа
+print(list(even_numbers))
+
