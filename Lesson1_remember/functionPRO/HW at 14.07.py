@@ -1,12 +1,16 @@
-# #1
-# def create_profile(name, age, city):
-#     return {
-#         "name": name,
-#         "age": age,
-#         "city": city
-#     }
-#
-# name = input("Enter name ")
+#1
+def create_profile(name, age=18, city='Unknown'): #ф-я с позиционным аргументом name
+    return {  #верни словарь:
+        "name": name,
+        "age": age,
+        "city": city
+    }
+
+print(create_profile("Anna")) # проверка от Марии
+print(create_profile("Tom",25))
+print(create_profile(city="Haifa", name="Igor"))
+
+# name = input("Enter name ") # мой вариант без проверки
 # age = input("Enter age ")
 # city = input("Enter city ")
 #
@@ -39,4 +43,26 @@ breed = input("Enter breed ")
 
 print_pet_info(name, age=age, color=color,breed=breed)
 
+#4
+def merge_lists(*lists):
+    result = []
 
+    for current_list in lists:
+        for item in current_list:
+            result.append(item)
+    return result
+
+print(merge_lists(
+    [1, 25],
+    [3, 8, 3],
+    [4, 5, 456],
+    []
+))
+print()
+
+#5
+def build_message(*words, separator=" "):
+    return separator.join(words)
+print(build_message("Hello", "world"))
+print(build_message("2026", "07", "15", separator=" "))
+print(build_message())
